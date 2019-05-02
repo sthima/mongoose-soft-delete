@@ -18,6 +18,24 @@ function SoftDeletePlugin(schema, options) {
     schema.statics.findOneWithDeleted = function () {
         return mongoose.Model.findOne.apply(this, arguments);
     };
+    schema.statics.update = function () {
+        return mongoose.Model.update.apply(this, arguments).where('deleted').ne(true);
+    };
+    schema.statics.updateOne = function () {
+        return mongoose.Model.updateOne.apply(this, arguments).where('deleted').ne(true);
+    };
+    schema.statics.updateWithDeleted = function () {
+        return mongoose.Model.update.apply(this, arguments);
+    };
+    schema.statics.updateOneWithDeleted = function () {
+        return mongoose.Model.updateOne.apply(this, arguments);
+    };
+    schema.statics.findOneAndUpdate = function () {
+        return mongoose.Model.findOneAndUpdate.apply(this, arguments).where('deleted').ne(true);
+    };
+    schema.statics.findOneAndUpdateWithDeleted = function () {
+        return mongoose.Model.findOneAndUpdate.apply(this, arguments);
+    };
     if (options && options.index) {
         schema.path('deleted').index(options.index);
     }
