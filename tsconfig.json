@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./index.ts"],
+  "exclude": ["node_modules", "dist"]
+}
