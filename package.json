@@ -1,0 +1,30 @@
+{
+  "name": "mongoose-soft-delete",
+  "version": "0.0.1",
+  "description": "Another package to soft-delete mongodb schemas",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sthima/mongoose-soft-delete.git"
+  },
+  "keywords": [
+    "softdelete",
+    "soft-delete",
+    "mongoose",
+    "soft",
+    "delete",
+    "mongodb"
+  ],
+  "author": "Sthima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sthima/mongoose-soft-delete/issues"
+  },
+  "homepage": "https://github.com/sthima/mongoose-soft-delete#readme",
+  "dependencies": {
+    "mongoose": "^5.5.5"
+  }
+}
