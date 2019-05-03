@@ -7,6 +7,18 @@ export default function SoftDeletePlugin (schema, options) {
     return this.updateOne(filters, {deleted: true});
   };
 
+  schema.statics.deleteMany = function(filters: any)  {
+    return this.updateMany(filters, {deleted: true});
+  };
+
+  schema.statics.hardDeleteOne = function(filters: any)  {
+    return  mongoose.Model.deleteOne.apply(this, arguments);
+  };
+
+  schema.statics.hardDeleteMany= function(filters: any)  {
+    return  mongoose.Model.deleteMany.apply(this, arguments);
+  };
+
   schema.statics.find = function()  {
     return mongoose.Model.find.apply(this, arguments).where('deleted').ne(true);
   };
