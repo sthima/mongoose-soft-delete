@@ -59,9 +59,16 @@ export default function SoftDeletePlugin (schema, options) {
     return mongoose.Model.findOneAndUpdate.apply(this, arguments);
   };
 
+  schema.statics.countDocuments = function() {
+    return mongoose.Model.countDocuments.apply(this, arguments).where('deleted').ne(true);
+  }
+
+  schema.statics.countDocumentsWithDeleted = function() {
+    return mongoose.Model.countDocuments.apply(this, arguments);
+  }
+
 
   if (options && options.index) {
     schema.path('deleted').index(options.index);
   }
 }
-
