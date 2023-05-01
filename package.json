@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/sthima/mongoose-soft-delete#readme",
   "dependencies": {
-    "mongoose": "^5.7.5"
+    "mongoose": "^5.13.17"
   },
   "devDependencies": {
     "ts-node": "^8.1.0",
